@@ -60,11 +60,10 @@ public class Motorcycle_Repair {
         {
             //Options Menu
             bw.write("Menu\n"
-                    + "1. Insert New Motorcycle for Fixing(Begin) \n2. Insert New Motorcycle for Fixing (End) \n"
-                    + "3. Delete Old Motorcycle (Begin)\n"
-                    + "4. Delete Old Motorcycle (End) \n5. Delete Old Motorcycle (Index) \n"
-                    + "6. Search Motorcycle By License \n7. Search Spares By Reference \n8. Motorcycles Record \n" 
-                    + "9. Spares Record \n10.Out \n");
+                    + "1. Insert New Motorcycle for Fixing \n2. Delete Old Motorcycle (Index) \n"
+                    + "3. Search Motorcycle By License \n"
+                    + "4. Search Spares By Reference \n5. Motorcycles Record \n"
+                    + "6. Spares Record \n7. Insert New Type of Spare \n8. Out \n");
             bw.flush();
             op = Integer.parseInt(br.readLine());
             switch(op)
@@ -83,67 +82,59 @@ public class Motorcycle_Repair {
                         Motorcycle_Workshop.insertAtBegin((Node) new Motorcycle_Workshop(Brand, License, Spare));
                         Motorcycle_Workshop.printList();
                 break;
-                    //Option 2(InsertAtEnd)
-                case 2: bw.write("\nNew information:\n"
-                        + "Motorcycle_Brand:");
-                        bw.flush();
-                        Brand=br.readLine();
-                        bw.write("License_Number:");
-                        bw.flush();
-                        License=br.readLine();
-                        bw.write("Type of Spare Required:");
-                        bw.flush();
-                        Spare=br.readLine();
-                        Motorcycle_Workshop.insertAtEnd((Node) new Motorcycle_Workshop(Brand, License, Spare));
-                        Motorcycle_Workshop.printList();
-                break;
-                    //Option 3 (DeleteAtBegin))
-                case 3: Motorcycle_Workshop.deleteAtBegin();
-                        Motorcycle_Workshop.printList();
-                break;
-                    //Option 4(DeleteAtEnd)
-                case 4: Motorcycle_Workshop.deleteAtEnd();
-                        Motorcycle_Workshop.printList();
-                break;
-                    //Option 5(DeleteAtIndex)
-                case 5: bw.write("Motorcycle Record to Delete:");
+                    //Option 2(DeleteAtIndex)
+                case 2: bw.write("Motorcycle Record to Delete:");
                         bw.flush();
                         delete= Integer.parseInt(br.readLine());
                         Motorcycle_Workshop.deleteAtIndex(delete);
                         Motorcycle_Workshop.printList();
                 break;
-                    //Option 6(LinealSearch)
-                case 6: bw.write("License:");
+                    //Option 3(LinealSearch)
+                case 3: bw.write("License:");
                         bw.flush();
                         License=br.readLine();
                         Motorcycle_Workshop.linealSearch((Node) new Motorcycle_Workshop(null,License,null));
                 break;
-                    //Option 7(LinealSearch)
-                case 7: bw.write("Spare Reference:");
+                    //Option 4(LinealSearch)
+                case 4: bw.write("Spare Reference:");
                         bw.flush();
                         Spare=br.readLine();
                         Spares.linealSearch((Node) new Spares(Spare,0,0));
                 break;
-                    //Option 8(PrintList)
-                case 8: bw.write("Motorcycles Record");
+                    //Option 5(PrintList)
+                case 5: bw.write("Motorcycles Record:\n");
                         bw.flush();
                         Motorcycle_Workshop.printList();
                 break;
-                    //Option 9(PrintList)
-                case 9: bw.write("Spares Record\n");
+                    //Option 6(PrintList)
+                case 6: bw.write("Spares Record:\n");
                         bw.flush();
                         Spares.printList();
                 break;
-                    //Option 10(Get Out)
-                case 10: bw.write("Thanks For Visit Us");
+                    //Option 7(InsertAtBegin)
+                case 7: bw.write("\nNew information:\n"
+                        + "Reference of Spare:");
+                        bw.flush();
+                        Spare=br.readLine();
+                        bw.write("Spare_Existence:");
+                        bw.flush();
+                        Existence=Integer.parseInt(br.readLine());
+                        bw.write("Price:");
+                        bw.flush();
+                        Price=Integer.parseInt(br.readLine());
+                        Spares.insertAtBegin((Node) new Spares(Spare, Existence, Price));
+                        Spares.printList();
+                break;
+                    //Option 7(Get Out)
+                case 8: bw.write("Thanks For Visit Us\n");
                         bw.flush();
                 break;
                 default: bw.write("Incorrect");
                          bw.flush();
-
                 break;
+                
             }
-        }while(op!=10);
+        }while(op!=8);
     }
     
 }
