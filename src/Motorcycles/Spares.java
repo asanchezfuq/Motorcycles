@@ -6,7 +6,7 @@
 package Motorcycles;
 
 /**
- *
+ *In this class is located the Spares list structure
  * @author Andrés Felipe
  */
 import LinearDataStructures.Node;

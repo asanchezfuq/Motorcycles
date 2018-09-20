@@ -20,7 +20,7 @@ public class Motorcycle_Repair {
     public static void main(String[]args) throws IOException
     {
         List Motorcycle_Workshop = new List();
-        
+        //Motorcycles List
         Motorcycle_Workshop.insertAtBegin(new Motorcycle_Workshop("Yamaha","9876","00123"));
         Motorcycle_Workshop.insertAtBegin(new Motorcycle_Workshop("Honda","0765","00234"));
         Motorcycle_Workshop.insertAtBegin(new Motorcycle_Workshop("Ducati","4567","00345"));
@@ -35,6 +35,7 @@ public class Motorcycle_Repair {
         Motorcycle_Workshop.insertAtBegin(new Motorcycle_Workshop("Norton","12670","00114"));
         
         List Spares = new List();
+        //Spares List
         Spares.insertAtBegin(new Spares ("00123",230,120000));
         Spares.insertAtBegin(new Spares ("00234",245,110000));
         Spares.insertAtBegin(new Spares ("00345",250,160000));
@@ -51,11 +52,13 @@ public class Motorcycle_Repair {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter( System.out ));
         BufferedReader br = new BufferedReader (new InputStreamReader ( System.in ) );
         
+        //Defined Variables
         int op=0, Price = 0, posicion=0, delete=0, Existence=0;
         String Brand=null, License=null, Spare=null;
         
         do
         {
+            //Options Menu
             bw.write("Menu\n"
                     + "1. Insert New Motorcycle for Fixing(Begin) \n2. Insert New Motorcycle for Fixing (End) \n"
                     + "3. Delete Old Motorcycle (Begin)\n"
@@ -66,6 +69,7 @@ public class Motorcycle_Repair {
             op = Integer.parseInt(br.readLine());
             switch(op)
             {
+                //Each Option of The Menu with it's Functions Option 1(InsertAtBegin)
                 case 1: bw.write("\nNew information:\n"
                         + "Motorcycle_Brand:");
                         bw.flush();
@@ -79,6 +83,7 @@ public class Motorcycle_Repair {
                         Motorcycle_Workshop.insertAtBegin((Node) new Motorcycle_Workshop(Brand, License, Spare));
                         Motorcycle_Workshop.printList();
                 break;
+                    //Option 2(InsertAtEnd)
                 case 2: bw.write("\nNew information:\n"
                         + "Motorcycle_Brand:");
                         bw.flush();
@@ -92,37 +97,45 @@ public class Motorcycle_Repair {
                         Motorcycle_Workshop.insertAtEnd((Node) new Motorcycle_Workshop(Brand, License, Spare));
                         Motorcycle_Workshop.printList();
                 break;
+                    //Option 3 (DeleteAtBegin))
                 case 3: Motorcycle_Workshop.deleteAtBegin();
                         Motorcycle_Workshop.printList();
                 break;
+                    //Option 4(DeleteAtEnd)
                 case 4: Motorcycle_Workshop.deleteAtEnd();
                         Motorcycle_Workshop.printList();
                 break;
-                case 5: bw.write("Motorcycle Record to Delete\n");
+                    //Option 5(DeleteAtIndex)
+                case 5: bw.write("Motorcycle Record to Delete:");
                         bw.flush();
                         delete= Integer.parseInt(br.readLine());
                         Motorcycle_Workshop.deleteAtIndex(delete);
                         Motorcycle_Workshop.printList();
                 break;
-                case 6: bw.write("License:\n");
+                    //Option 6(LinealSearch)
+                case 6: bw.write("License:");
                         bw.flush();
                         License=br.readLine();
                         Motorcycle_Workshop.linealSearch((Node) new Motorcycle_Workshop(null,License,null));
                 break;
-                case 7: bw.write("Spare Reference:\n");
+                    //Option 7(LinealSearch)
+                case 7: bw.write("Spare Reference:");
                         bw.flush();
                         Spare=br.readLine();
                         Spares.linealSearch((Node) new Spares(Spare,0,0));
                 break;
-                case 8: bw.write("Motorcycles Record\n");
+                    //Option 8(PrintList)
+                case 8: bw.write("Motorcycles Record");
                         bw.flush();
                         Motorcycle_Workshop.printList();
                 break;
+                    //Option 9(PrintList)
                 case 9: bw.write("Spares Record\n");
                         bw.flush();
                         Spares.printList();
                 break;
-                case 10: bw.write("Thanks For Visit Us\n");
+                    //Option 10(Get Out)
+                case 10: bw.write("Thanks For Visit Us");
                         bw.flush();
                 break;
                 default: bw.write("Incorrect");

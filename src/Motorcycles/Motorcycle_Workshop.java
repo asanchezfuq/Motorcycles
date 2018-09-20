@@ -9,7 +9,7 @@ import LinearDataStructures.Node;
 
 
 /**
- *
+ *In this class is located the Motorcyles list structure
  * @author Andrés Felipe
  */
 public class Motorcycle_Workshop implements Node {
