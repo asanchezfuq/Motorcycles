@@ -13,14 +13,18 @@ import LinearDataStructures.Node;
  * @author Andrés Felipe
  */
 public class Motorcycle_Workshop implements Node {
+    String Name_Owner=null;
+    String Dct_Owner=null;
     String Motorcycle_Brand=null;
     String License_Number=null;
     String Type_Spare =null;
    
     Motorcycle_Workshop next = null;
     
-    public Motorcycle_Workshop(String Brand, String License, String Spare)
+    public Motorcycle_Workshop(String Name, String Owner, String Brand, String License, String Spare)
    {
+       this.Name_Owner = Name;
+       this.Dct_Owner = Owner;
        this.Motorcycle_Brand = Brand;
        this.License_Number = License;
        this.Type_Spare= Spare;
@@ -39,7 +43,7 @@ public class Motorcycle_Workshop implements Node {
 
     @Override
     public Motorcycle_Workshop clone() {
-        Motorcycle_Workshop clone = new Motorcycle_Workshop(Motorcycle_Brand, License_Number, Type_Spare);
+        Motorcycle_Workshop clone = new Motorcycle_Workshop(Name_Owner, Dct_Owner, Motorcycle_Brand, License_Number, Type_Spare);
         return clone;    
     }
 
@@ -60,6 +64,6 @@ public class Motorcycle_Workshop implements Node {
     
     public String toString()
     {
-        return this.Motorcycle_Brand +", Licence:" + License_Number +", Type of Spare Needed: "+Type_Spare +"\n";
+        return this.Name_Owner +", Id Document Owner:"+Dct_Owner+", Motorcycle Brand:"+Motorcycle_Brand +", Licence:" + License_Number +", Type of Spare Needed: "+Type_Spare +"\n";
     }
 }

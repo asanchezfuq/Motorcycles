@@ -516,5 +516,6 @@ public class List {
           
           test.binarySearch(Node.next);
           test.printList();
+          
         }
 }

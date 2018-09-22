@@ -21,18 +21,18 @@ public class Motorcycle_Repair {
     {
         List Motorcycle_Workshop = new List();
         //Motorcycles List
-        Motorcycle_Workshop.insertAtBegin(new Motorcycle_Workshop("Yamaha","9876","00123"));
-        Motorcycle_Workshop.insertAtBegin(new Motorcycle_Workshop("Honda","0765","00234"));
-        Motorcycle_Workshop.insertAtBegin(new Motorcycle_Workshop("Ducati","4567","00345"));
-        Motorcycle_Workshop.insertAtBegin(new Motorcycle_Workshop("Kawasaki","1234","00456"));
-        Motorcycle_Workshop.insertAtBegin(new Motorcycle_Workshop("Harley Davidson","564759","00567"));
-        Motorcycle_Workshop.insertAtBegin(new Motorcycle_Workshop("BMW","3478","00678"));
-        Motorcycle_Workshop.insertAtBegin(new Motorcycle_Workshop("Suzuki","3847679","00789"));
-        Motorcycle_Workshop.insertAtBegin(new Motorcycle_Workshop("Aprilia","865974","00891"));
-        Motorcycle_Workshop.insertAtBegin(new Motorcycle_Workshop("Triumph","75675","00911"));
-        Motorcycle_Workshop.insertAtBegin(new Motorcycle_Workshop("Hyosung","84573","00112"));
-        Motorcycle_Workshop.insertAtBegin(new Motorcycle_Workshop("Hero","09875","00113"));
-        Motorcycle_Workshop.insertAtBegin(new Motorcycle_Workshop("Norton","12670","00114"));
+        Motorcycle_Workshop.insertAtBegin(new Motorcycle_Workshop("Patricia Lopez","56789456","Yamaha","9876","00123"));
+        Motorcycle_Workshop.insertAtBegin(new Motorcycle_Workshop("Juan Ruiz","65748390","Honda","0765","00234"));
+        Motorcycle_Workshop.insertAtBegin(new Motorcycle_Workshop("Ximena Martínez","23456459","Ducati","4567","00345"));
+        Motorcycle_Workshop.insertAtBegin(new Motorcycle_Workshop("Nancy Rodriguez","23498756","Kawasaki","1234","00456"));
+        Motorcycle_Workshop.insertAtBegin(new Motorcycle_Workshop("Alfonso Lopez","80976542","Harley Davidson","564759","00567"));
+        Motorcycle_Workshop.insertAtBegin(new Motorcycle_Workshop("María Castañeda","54637890","BMW","3478","00678"));
+        Motorcycle_Workshop.insertAtBegin(new Motorcycle_Workshop("Maritza Daza","76545698","Suzuki","3847679","00789"));
+        Motorcycle_Workshop.insertAtBegin(new Motorcycle_Workshop("Yasmin Gomez","12309812","Aprilia","865974","00891"));
+        Motorcycle_Workshop.insertAtBegin(new Motorcycle_Workshop("Karen Fuentes","65747626","Triumph","75675","00911"));
+        Motorcycle_Workshop.insertAtBegin(new Motorcycle_Workshop("Marina Gutierrez","23409876","Hyosung","84573","00112"));
+        Motorcycle_Workshop.insertAtBegin(new Motorcycle_Workshop("Gonzalo Jimenez","657483549","Hero","09875","00113"));
+        Motorcycle_Workshop.insertAtBegin(new Motorcycle_Workshop("Carlos Barrero","76980923","Norton","12670","00114"));
         
         List Spares = new List();
         //Spares List
@@ -44,17 +44,17 @@ public class Motorcycle_Repair {
         Spares.insertAtBegin(new Spares ("00678",234,154000));
         Spares.insertAtBegin(new Spares ("00789",23,15000));
         Spares.insertAtBegin(new Spares ("00891",237,154000));
-        Spares.insertAtBegin(new Spares ("00911",234,154000));
-        Spares.insertAtBegin(new Spares ("00112",234,154000));
-        Spares.insertAtBegin(new Spares ("00113",234,154000));
-        Spares.insertAtBegin(new Spares ("00114",234,154000));
+        Spares.insertAtBegin(new Spares ("00911",56,124000));
+        Spares.insertAtBegin(new Spares ("00112",89,112000));
+        Spares.insertAtBegin(new Spares ("00113",70,100000));
+        Spares.insertAtBegin(new Spares ("00114",12,189000));
         
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter( System.out ));
         BufferedReader br = new BufferedReader (new InputStreamReader ( System.in ) );
         
         //Defined Variables
         int op=0, Price = 0, posicion=0, delete=0, Existence=0;
-        String Brand=null, License=null, Spare=null;
+        String Brand=null, License=null, Spare=null, Name=null, Owner=null;
         
         do
         {
@@ -70,7 +70,13 @@ public class Motorcycle_Repair {
             {
                 //Each Option of The Menu with it's Functions Option 1(InsertAtBegin)
                 case 1: bw.write("\nNew information:\n"
-                        + "Motorcycle_Brand:");
+                        +"Name_Owner:");
+                        bw.flush();
+                        Name=br.readLine();
+                        bw.write("Dct_Owner:");
+                        bw.flush();
+                        Owner=br.readLine();
+                        bw.write("Motorcycle_Brand:");
                         bw.flush();
                         Brand=br.readLine();
                         bw.write("License_Number:");
@@ -79,7 +85,7 @@ public class Motorcycle_Repair {
                         bw.write("Type of Spare Required:");
                         bw.flush();
                         Spare=br.readLine();
-                        Motorcycle_Workshop.insertAtBegin((Node) new Motorcycle_Workshop(Brand, License, Spare));
+                        Motorcycle_Workshop.insertAtBegin((Node) new Motorcycle_Workshop(Name, Owner, Brand, License, Spare));
                         Motorcycle_Workshop.printList();
                 break;
                     //Option 2(DeleteAtIndex)
@@ -93,7 +99,7 @@ public class Motorcycle_Repair {
                 case 3: bw.write("License:");
                         bw.flush();
                         License=br.readLine();
-                        Motorcycle_Workshop.linealSearch((Node) new Motorcycle_Workshop(null,License,null));
+                        Motorcycle_Workshop.linealSearch((Node) new Motorcycle_Workshop(null,null,null,License,null));
                 break;
                     //Option 4(LinealSearch)
                 case 4: bw.write("Spare Reference:");
@@ -134,7 +140,7 @@ public class Motorcycle_Repair {
                 break;
                 
             }
-        }while(op!=8);
+        }while(op!=9);
     }
     
 }

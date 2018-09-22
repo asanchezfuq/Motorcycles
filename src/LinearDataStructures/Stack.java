@@ -85,6 +85,7 @@ public class Stack {
 	/**
 	 * 
 	 */
+        
 	public void printStack()
 	{
 		BufferedWriter bw = new BufferedWriter(	new OutputStreamWriter( System.out ));
