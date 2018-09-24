@@ -61,7 +61,7 @@ public class Motorcycle_Repair {
             //Options Menu
             bw.write("Menu\n"
                     + "1. Insert New Motorcycle for Fixing \n2. Delete Old Motorcycle (Index) \n"
-                    + "3. Search Motorcycle By License \n4.Search Motorcycle By Owner's Id Document \n"
+                    + "3. Search Motorcycle By License \n4. Search Motorcycle By Owner's Id Document \n"
                     + "5. Search Spares By Reference \n6. Motorcycles Record \n"
                     + "7. Spares Record \n8. Insert New Type of Spare \n9. Out \n");
             bw.flush();
