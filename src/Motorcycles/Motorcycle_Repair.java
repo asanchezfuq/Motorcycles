@@ -61,9 +61,9 @@ public class Motorcycle_Repair {
             //Options Menu
             bw.write("Menu\n"
                     + "1. Insert New Motorcycle for Fixing \n2. Delete Old Motorcycle (Index) \n"
-                    + "3. Search Motorcycle By License \n"
-                    + "4. Search Spares By Reference \n5. Motorcycles Record \n"
-                    + "6. Spares Record \n7. Insert New Type of Spare \n8. Out \n");
+                    + "3. Search Motorcycle By License \n4.Search Motorcycle By Owner's Id Document \n"
+                    + "5. Search Spares By Reference \n6. Motorcycles Record \n"
+                    + "7. Spares Record \n8. Insert New Type of Spare \n9. Out \n");
             bw.flush();
             op = Integer.parseInt(br.readLine());
             switch(op)
@@ -101,24 +101,30 @@ public class Motorcycle_Repair {
                         License=br.readLine();
                         Motorcycle_Workshop.linealSearch((Node) new Motorcycle_Workshop(null,null,null,License,null));
                 break;
-                    //Option 4(LinealSearch)
-                case 4: bw.write("Spare Reference:");
+                //Option 4(LinealSearch)
+                case 4: bw.write("Owner's Id Document:");
+                        bw.flush();
+                        Owner=br.readLine();
+                        Motorcycle_Workshop.linealSearch((Node) new Motorcycle_Workshop(null,Owner,null,null,null));
+                break;
+                    //Option 5(LinealSearch)
+                case 5: bw.write("Spare Reference:");
                         bw.flush();
                         Spare=br.readLine();
                         Spares.linealSearch((Node) new Spares(Spare,0,0));
                 break;
-                    //Option 5(PrintList)
-                case 5: bw.write("Motorcycles Record:\n");
+                    //Option 6(PrintList)
+                case 6: bw.write("Motorcycles Record:\n");
                         bw.flush();
                         Motorcycle_Workshop.printList();
                 break;
-                    //Option 6(PrintList)
-                case 6: bw.write("Spares Record:\n");
+                    //Option 7(PrintList)
+                case 7: bw.write("Spares Record:\n");
                         bw.flush();
                         Spares.printList();
                 break;
-                    //Option 7(InsertAtBegin)
-                case 7: bw.write("\nNew information:\n"
+                    //Option 8(InsertAtBegin)
+                case 8: bw.write("\nNew information:\n"
                         + "Reference of Spare:");
                         bw.flush();
                         Spare=br.readLine();
@@ -131,8 +137,8 @@ public class Motorcycle_Repair {
                         Spares.insertAtBegin((Node) new Spares(Spare, Existence, Price));
                         Spares.printList();
                 break;
-                    //Option 7(Get Out)
-                case 8: bw.write("Thanks For Visit Us\n");
+                    //Option 9(Get Out)
+                case 9: bw.write("Thanks For Visit Us\n");
                         bw.flush();
                 break;
                 default: bw.write("Incorrect");

@@ -52,8 +52,13 @@ public class Motorcycle_Workshop implements Node {
         if(this.License_Number.equals(temp.License_Number))
             return true;
         
+        if(this.Dct_Owner.equals(temp.Dct_Owner))
+            return true;
+        
         return false;
     }
+    
+    
 
    
     public boolean isLessThan(Node node) {
