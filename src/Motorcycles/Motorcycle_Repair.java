@@ -63,7 +63,7 @@ public class Motorcycle_Repair {
                     + "1. Insert New Motorcycle for Fixing \n2. Delete Old Motorcycle (Index) \n"
                     + "3. Search Motorcycle By License \n4. Search Motorcycle By Owner's Id Document \n"
                     + "5. Search Spares By Reference \n6. Motorcycles Record \n"
-                    + "7. Spares Record \n8. Insert New Type of Spare \n9. Repair General Record \n10. Out \n");
+                    + "7. Spares Record \n8. Insert New Type of Spare \n9. Out \n");
             bw.flush();
             op = Integer.parseInt(br.readLine());
             switch(op)
@@ -137,28 +137,8 @@ public class Motorcycle_Repair {
                         Spares.insertAtBegin((Node) new Spares(Spare, Existence, Price));
                         Spares.printList();
                 break;
-                case 9: bw.write("\nNew information:\n"
-                        +"Name_Owner:");
-                        bw.flush();
-                        Name=br.readLine();
-                        bw.write("Dct_Owner:");
-                        bw.flush();
-                        Owner=br.readLine();
-                        bw.write("Motorcycle_Brand:");
-                        bw.flush();
-                        Brand=br.readLine();
-                        bw.write("License_Number:");
-                        bw.flush();
-                        License=br.readLine();
-                        bw.write("Type of Spare Required:");
-                        bw.flush();
-                        Spare=br.readLine();
-                        Motorcycle_Workshop.insertAtBegin((Node) new Motorcycle_Workshop(Name, Owner, Brand, License, Spare));
-                        Motorcycle_Workshop.deleteAtEnd();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
-                        Motorcycle_Workshop.printList();
-                break;
                     //Option 9(Get Out)
-                case 10: bw.write("Thanks For Visit Us\n");
+                case 9: bw.write("Thanks For Visit Us\n");
                         bw.flush();
                 break;
                 default: bw.write("Incorrect");
@@ -166,7 +146,7 @@ public class Motorcycle_Repair {
                 break;
                 
             }
-        }while(op!=10);
+        }while(op!=9);
     }
     
 }
