@@ -9,7 +9,7 @@ import LinearDataStructures.Node;
 
 /**
  *
- * @author TATIANA
+ * @author Andrés Felipe
  */
 public class Vegetables implements Node {
 
