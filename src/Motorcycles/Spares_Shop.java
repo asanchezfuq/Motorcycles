@@ -14,13 +14,15 @@ import LinearDataStructures.Node;
 public class Spares_Shop implements Node{
     String Type_Spare =null;
     int Spare_Existence =0;
+    String Motorcycle_Brand = null;
    
     Spares_Shop next = null;
     
-    public Spares_Shop(String Spare,int Existence)
+    public Spares_Shop(String Spare,int Existence, String Brand)
    {
        this.Type_Spare = Spare;
        this.Spare_Existence = Existence;
+       this.Motorcycle_Brand = Brand;
    }
 
 
@@ -35,7 +37,7 @@ public class Spares_Shop implements Node{
 
     @Override
     public Spares_Shop clone() {
-        Spares_Shop clone = new Spares_Shop(Type_Spare, Spare_Existence);
+        Spares_Shop clone = new Spares_Shop(Type_Spare, Spare_Existence, Motorcycle_Brand);
         return clone;    
     }
 
@@ -58,7 +60,7 @@ public class Spares_Shop implements Node{
     
     public String toString()
     {
-        return this.Type_Spare+", Required Quantity:"+Spare_Existence+"\n";
+        return this.Type_Spare+", Required Quantity:"+Spare_Existence+", Type of Motorcycle:"+Motorcycle_Brand+"\n";
     }
 }
 
