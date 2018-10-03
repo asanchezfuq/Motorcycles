@@ -13,22 +13,25 @@ import LinearDataStructures.Node;
  * @author Andrés Felipe
  */
 public class Motorcycle_Workshop implements Node {
-    String Name_Owner=null;
-    String Dct_Owner=null;
-    String Motorcycle_Brand=null;
-    String License_Number=null;
-    String Type_Spare =null;
+    String Name_Owner = null;
+    String Dct_Owner = null;
+    String Motorcycle_Brand = null;
+    String License_Number = null;
+    String Type_Spare = null;
+    String In_Date = null;
+    String Out_Date = null;
    
     Motorcycle_Workshop next = null;
     
-    public Motorcycle_Workshop(String Name, String Owner, String Brand, String License, String Spare)
+    public Motorcycle_Workshop(String Name, String Owner, String Brand, String License, String Spare, String InD, String OutD)
    {
        this.Name_Owner = Name;
        this.Dct_Owner = Owner;
        this.Motorcycle_Brand = Brand;
        this.License_Number = License;
        this.Type_Spare= Spare;
-      
+       this.In_Date = InD;
+       this.Out_Date = OutD;
    }
 
 
@@ -43,7 +46,7 @@ public class Motorcycle_Workshop implements Node {
 
     @Override
     public Motorcycle_Workshop clone() {
-        Motorcycle_Workshop clone = new Motorcycle_Workshop(Name_Owner, Dct_Owner, Motorcycle_Brand, License_Number, Type_Spare);
+        Motorcycle_Workshop clone = new Motorcycle_Workshop(Name_Owner, Dct_Owner, Motorcycle_Brand, License_Number, Type_Spare, In_Date, Out_Date);
         return clone;    
     }
 
@@ -69,6 +72,7 @@ public class Motorcycle_Workshop implements Node {
     
     public String toString()
     {
-        return this.Name_Owner +", Id Document Owner:"+Dct_Owner+", Motorcycle Brand:"+Motorcycle_Brand +", Licence:" + License_Number +", Type of Spare Needed: "+Type_Spare +"\n";
+        return this.Name_Owner +", Id Document Owner:"+Dct_Owner+", Motorcycle Brand:"+Motorcycle_Brand +", Licence:" + License_Number +", Type of Spare Needed: "+Type_Spare +
+                ", In Date:"+In_Date+", Out Date:"+Out_Date+"\n";
     }
 }
