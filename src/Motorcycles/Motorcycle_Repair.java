@@ -21,18 +21,18 @@ public class Motorcycle_Repair {
     {
         List Motorcycle_Workshop = new List();
         //Motorcycles List
-        Motorcycle_Workshop.insertAtBegin(new Motorcycle_Workshop("Patricia Lopez","56789456","Yamaha","9876","00123","",""));
-        Motorcycle_Workshop.insertAtBegin(new Motorcycle_Workshop("Juan Ruiz","65748390","Honda","0765","00234","",""));
-        Motorcycle_Workshop.insertAtBegin(new Motorcycle_Workshop("Ximena Martínez","23456459","Ducati","4567","00345","",""));
-        Motorcycle_Workshop.insertAtBegin(new Motorcycle_Workshop("Nancy Rodriguez","23498756","Kawasaki","1234","00456","",""));
-        Motorcycle_Workshop.insertAtBegin(new Motorcycle_Workshop("Alfonso Lopez","80976542","Harley Davidson","564759","00567","",""));
-        Motorcycle_Workshop.insertAtBegin(new Motorcycle_Workshop("María Castañeda","54637890","BMW","3478","00678","",""));
-        Motorcycle_Workshop.insertAtBegin(new Motorcycle_Workshop("Maritza Daza","76545698","Suzuki","3847679","00789","",""));
-        Motorcycle_Workshop.insertAtBegin(new Motorcycle_Workshop("Yasmin Gomez","12309812","Aprilia","865974","00891","",""));
-        Motorcycle_Workshop.insertAtBegin(new Motorcycle_Workshop("Karen Fuentes","65747626","Triumph","75675","00911","",""));
-        Motorcycle_Workshop.insertAtBegin(new Motorcycle_Workshop("Marina Gutierrez","23409876","Hyosung","84573","00112","",""));
-        Motorcycle_Workshop.insertAtBegin(new Motorcycle_Workshop("Gonzalo Jimenez","657483549","Hero","09875","00113","",""));
-        Motorcycle_Workshop.insertAtBegin(new Motorcycle_Workshop("Carlos Barrero","76980923","Norton","12670","00114","",""));
+        Motorcycle_Workshop.insertAtBegin(new Motorcycle_Workshop("Patricia Lopez","56789456","Yamaha","9876","00123","10-01-17","15-02-17"));
+        Motorcycle_Workshop.insertAtBegin(new Motorcycle_Workshop("Juan Ruiz","65748390","Honda","0765","00234","10-01-18","15-02-18"));
+        Motorcycle_Workshop.insertAtBegin(new Motorcycle_Workshop("Ximena Martínez","23456459","Ducati","4567","00345","15-01-17","15-02-17"));
+        Motorcycle_Workshop.insertAtBegin(new Motorcycle_Workshop("Nancy Rodriguez","23498756","Kawasaki","1234","00456","10-01-18","15-02-18"));
+        Motorcycle_Workshop.insertAtBegin(new Motorcycle_Workshop("Alfonso Lopez","80976542","Harley Davidson","564759","00567","10-01-17","15-02-17"));
+        Motorcycle_Workshop.insertAtBegin(new Motorcycle_Workshop("María Castañeda","54637890","BMW","3478","00678","10-01-17","15-02-17"));
+        Motorcycle_Workshop.insertAtBegin(new Motorcycle_Workshop("Maritza Daza","76545698","Suzuki","3847679","00789","10-01-17","15-02-17"));
+        Motorcycle_Workshop.insertAtBegin(new Motorcycle_Workshop("Yasmin Gomez","12309812","Aprilia","865974","00891","10-01-18","15-02-18"));
+        Motorcycle_Workshop.insertAtBegin(new Motorcycle_Workshop("Karen Fuentes","65747626","Triumph","75675","00911","10-01-17","15-02-17"));
+        Motorcycle_Workshop.insertAtBegin(new Motorcycle_Workshop("Marina Gutierrez","23409876","Hyosung","84573","00112","10-01-18","15-02-18"));
+        Motorcycle_Workshop.insertAtBegin(new Motorcycle_Workshop("Gonzalo Jimenez","657483549","Hero","09875","00113","10-01-17","15-02-17"));
+        Motorcycle_Workshop.insertAtBegin(new Motorcycle_Workshop("Carlos Barrero","76980923","Norton","12670","00114","10-01-17","15-02-17"));
         
         List Spares = new List();
         //Spares List
