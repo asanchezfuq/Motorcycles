@@ -50,6 +50,7 @@ public class Motorcycle_Repair {
         Spares.insertAtBegin(new Spares ("00114",12,189000));
         
         List Spares_Shop = new List();
+        //Purchased Spares List
         
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter( System.out ));
         BufferedReader br = new BufferedReader (new InputStreamReader ( System.in ) );
@@ -62,7 +63,7 @@ public class Motorcycle_Repair {
         {
             //Options Menu
             bw.write("\nMenu\n"
-                    + "1. Insert New Motorcycle for Fixing \n2. Delete Old Motorcycle (Index) \n"
+                    + "1. Insert New Motorcycle for Fixing \n2. Delete Motorcycle Already Fixed \n"
                     + "3. Search Motorcycle By License \n4. Search Motorcycle By Owner's Id Document \n"
                     + "5. Search Spares By Reference \n6. Motorcycles Record \n"
                     + "7. Spares Record \n8. Insert New Type of Spare \n9. Order New Spares \n10. Out \n");
@@ -90,11 +91,8 @@ public class Motorcycle_Repair {
                         Motorcycle_Workshop.insertAtBegin((Node) new Motorcycle_Workshop(Name, Owner, Brand, License, Spare, InD, OutD));
                         Motorcycle_Workshop.printList();
                 break;
-                    //Option 2(DeleteAtIndex)
-                case 2: bw.write("Motorcycle Record to Delete:");
-                        bw.flush();
-                        delete= Integer.parseInt(br.readLine());
-                        Motorcycle_Workshop.deleteAtIndex(delete);
+                    //Option 2(DeleteAtEnd)
+                case 2: Motorcycle_Workshop.deleteAtEnd();
                         Motorcycle_Workshop.printList();
                 break;
                     //Option 3(LinealSearch)
@@ -140,7 +138,7 @@ public class Motorcycle_Repair {
                         Spares.printList();
                 break;
                 case 9: do{
-                            bw.write("1. New Spare \n2. List Of Purchased Spares\n");
+                            bw.write("\n1. New Spare \n2. List Of Purchased Spares\n");
                             bw.flush();
                             i = Integer.parseInt(br.readLine());
                             switch (i){
