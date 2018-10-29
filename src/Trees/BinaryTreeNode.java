@@ -71,9 +71,9 @@ public interface BinaryTreeNode {
 	public boolean isLessThan(BinaryTreeNode node);	
 	
 	
-	/**
-	 * 
-	 * @return
-	 */
-	public String toString();
+	@Override
+	public String toString()
+        {
+            
+        }
 }

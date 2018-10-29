@@ -1,5 +1,8 @@
 package Trees;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
 
 /*
 # Binary Tree Data Structure.
@@ -131,16 +134,32 @@ public class BinaryTree {
                         if(oneChild(temp))
                         {
                             if(temp.getLeft() != null)
-                            {
                                 if(temp.isLessThan(parent))
                                     parent.setLeft(temp.getLeft());
                                 else
-                                    parent.setRight(temp.getRight());
-                            }
+                                    parent.setRight(temp.getLeft());
                             else
-                            {
-                                
-                            }
+                                if(temp.isLessThan(parent))
+                                    parent.setLeft(temp.getRight());
+                                else
+                                    parent.setRight(temp.getRight());
+                        }
+                        else
+                        {
+                            BinaryTreeNode less = temp.getRight();
+                            
+                            while (less.getLeft() != null)
+                                less = less.getLeft();
+                            
+                            delete(less);
+                            
+                            less.setLeft(temp.getLeft());
+                            less.setRight(temp.getRight());
+                            
+                            if(temp.isLessThan(parent))
+                                parent.setLeft(less);
+                            else
+                                parent.setRight(less);
                         }
                     }
                 }
@@ -211,9 +230,27 @@ public class BinaryTree {
 		if(node != null)
 		{
 			inorder(node.getLeft());
-			System.out.print (node.toString() + " ");
+			System.out.print (node.toString() + ",");
 			inorder(node.getRight());
 		}
 			
 	}
+        public static void main(String[]args)
+    {
+            BinaryTree bt = new BinaryTree();
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            try
+            {
+               String[] numbers = br.readLine().split(",");
+               for(int i = 0; i < numbers.length; i++)
+               bt.insert( new BinaryNodeExample(Integer.parseInt(numbers[i])));
+               
+               bt.preorder(bt.root);
+               bt.delete(new BinaryNodeExample(27));
+               System.out.println();
+               bt.preorder(bt.root);
+            }
+            catch (Exception ex){}
+    }
 }
+
