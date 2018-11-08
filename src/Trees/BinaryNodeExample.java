@@ -76,4 +76,9 @@ public class BinaryNodeExample implements BinaryTreeNode {
             BinaryNodeExample temp = (BinaryNodeExample)node;
             return this.value < temp.value ? true : false;
 	}
+        @Override
+	public String toString()
+	{
+		return this.value + ",";
+	}
 }

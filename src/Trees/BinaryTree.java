@@ -245,8 +245,8 @@ public class BinaryTree {
                for(int i = 0; i < numbers.length; i++)
                bt.insert( new BinaryNodeExample(Integer.parseInt(numbers[i])));
                
-               bt.preorder(bt.root);
-               bt.delete(new BinaryNodeExample(27));
+               
+               bt.delete(new BinaryNodeExample(62));
                System.out.println();
                bt.preorder(bt.root);
             }
