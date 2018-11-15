@@ -36,9 +36,6 @@ public class Andy_First_Dictionary {
         {
             palabras.insert(caracteres[i]);
         }
-        
-        palabras.postorder(palabras.root);
-        
-        
+       
     }
 }

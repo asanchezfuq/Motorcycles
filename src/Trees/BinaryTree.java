@@ -270,10 +270,10 @@ public class BinaryTree {
                         case 6: num=leer.nextInt();
                                 bt.delete(new BinaryNodeExample(num));
                         break;
-                        case 7: System.out.print("...Salir...\n");
+                        case 7: System.out.print("Salir\n");
 
                         break;
-                        default: System.out.print("opcion incorrecta\n");
+                        default: System.out.print("Incorrecta\n");
 
                         break;
                     }
@@ -282,7 +282,7 @@ public class BinaryTree {
             }
             catch (Exception ex){}
         }
-         public void nivel(BinaryTreeNode node) {
+    public void nivel(BinaryTreeNode node) {
         BinaryTreeNode cola=root;
 		while(cola != null)
 		{

@@ -8,7 +8,6 @@ package TreeExercises;
 
 import Trees.BinaryNodeExample;
 import Trees.BinaryTree;
-import static Trees.BinaryTree.root;
 import Trees.BinaryTreeNode;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
