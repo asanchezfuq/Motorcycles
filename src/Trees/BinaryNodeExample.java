@@ -83,6 +83,7 @@ public class BinaryNodeExample implements BinaryTreeNode {
 	{
             BinaryNodeExample temp = (BinaryNodeExample)node;
             return this.Dct_Owner == temp.Dct_Owner ? true : false;
+            
 	}
 
 	

@@ -18,8 +18,7 @@ package Trees;
  * @author MSc. Carlos Andres Sierra, PhD. student
  */
 public interface BinaryTreeNode {
-
-		
+	
 	/**
 	 * 
 	 * @param node

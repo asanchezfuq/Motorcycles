@@ -236,52 +236,7 @@ public class BinaryTree {
 		}
 			
 	}
-        public static void main(String[]args)
-    {
-            BinaryTree bt = new BinaryTree();
-            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-            try
-            {
-                int op, num;
-                //String n;
-                Scanner leer =new Scanner (System.in); 
-                do
-                {
-                    System.out.print("\n Menú\n");
-                    System.out.println("Menu \n1. llenar Arbol \n2. Arbol Pre-Order \n"
-                                   + "3. Arbol Post-Order \n4. Arbol In-Order \n5. Buscar Nodo \n"
-                                   + "6. Eliminar Nodo \n7. Salir \n");
-                    op=leer.nextInt();
-                    switch(op)
-                    {
-                        case 1: String[] numbers = br.readLine().split(",");
-                                for(int i = 0; i < numbers.length; i++)
-                                bt.insert( new BinaryNodeExample(Integer.parseInt(numbers[i])));
-                        break;
-                        case 2: bt.preorder(bt.root);
-                        break;
-                        case 3: bt.postorder(bt.root);
-                        break;
-                        case 4: bt.inorder(bt.root);
-                        break;
-                        case 5: num=leer.nextInt();
-                                bt.search(new BinaryNodeExample(num));
-                        break;
-                        case 6: num=leer.nextInt();
-                                bt.delete(new BinaryNodeExample(num));
-                        break;
-                        case 7: System.out.print("Salir\n");
 
-                        break;
-                        default: System.out.print("Incorrecta\n");
-
-                        break;
-                    }
-                }while(op!=7);
-               
-            }
-            catch (Exception ex){}
-        }
     public void nivel(BinaryTreeNode node) {
         BinaryTreeNode cola=root;
 		while(cola != null)
