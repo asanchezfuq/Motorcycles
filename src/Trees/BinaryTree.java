@@ -216,7 +216,7 @@ public class BinaryTree {
 		{
 			postorder(node.getLeft());
 			postorder(node.getRight());
-			System.out.print(node.toString() + " ");
+			System.out.print(node.toString() + "");
 		}
 		
 	}
@@ -231,7 +231,7 @@ public class BinaryTree {
 		if(node != null)
 		{
 			inorder(node.getLeft());
-			System.out.print (node.toString() + ",");
+			System.out.print (node.toString() + "");
 			inorder(node.getRight());
 		}
 			
@@ -241,7 +241,7 @@ public class BinaryTree {
         BinaryTreeNode cola=root;
 		while(cola != null)
 		{
-                    System.out.print(node.toString() + " ");
+                    System.out.print(node.toString() + "");
                     node=cola;
                     if(node.getLeft()!=null)
                         nivel(node.getLeft());
