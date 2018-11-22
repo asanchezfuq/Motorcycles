@@ -1,0 +1,95 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Strings;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+
+/**
+ *
+ * @author Andrés Felipe
+ */
+public class Main {
+    
+    public static void main (String[]args)
+    {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        
+        ProblemsExamples run=new ProblemsExamples();
+        
+        int op;
+        try{
+            do
+            {
+                bw.write("\nChoose An Option:\n"
+                        + "1. it's Confidencial\n2. DNA_Pride\n3. Bin_2_Dec\n4. GCD_String\n"
+                        + "5. Anagrams\n6. Palindrome\n7. First_Occurence\n"
+                        + "8. Get Out\n\n");
+                bw.flush();
+                op = Integer.parseInt(br.readLine());
+                switch(op)
+                {
+                    case 1: bw.write("\n1. it's Confidencial\n");
+                            bw.flush();
+                            int cases = Integer.parseInt(br.readLine());
+                            for(int i = 0; i < cases; i++)
+				bw.write( (run.itsConfidencial( br.readLine() )));
+                                bw.flush();
+                    break;
+                    case 2: bw.write("\n2. DNA_Pride\n");
+                            bw.flush();
+                            int ca = Integer.parseInt(br.readLine());
+                            int leng;
+                            for(int i = 0; i < ca; i++)
+                                bw.write( (run.dna_pride( leng = Integer.parseInt(br.readLine()),br.readLine())));
+                                bw.flush();
+                    break;
+                    case 3: int c = Integer.parseInt(br.readLine());
+                            for(int i = 0; i < c; i++)
+                                bw.write( (run.bin2dec(br.readLine())));
+                                bw.flush();
+                    break;
+                    case 4: bw.write("\n4. GCD_String\n");
+                            bw.flush();
+                            int n = Integer.parseInt(br.readLine());
+                            int a,b;
+                            for(int i = 0; i < n; i++)
+                                bw.write( (run.gcd_string( a = Integer.parseInt(br.readLine()),b = Integer.parseInt(br.readLine()))));
+                                bw.flush();
+                    break;
+                    case 5: int nu = Integer.parseInt(br.readLine());
+                            for(int i = 0; i < nu; i++)
+                                bw.write( (run.anagrams( br.readLine(),br.readLine())));
+                                bw.flush();
+                    break;
+                    case 6: bw.write("\n6. Palindrome\n");
+                            bw.flush();
+                            bw.write( (run.palindromic_string( br.readLine() )));				
+                            bw.flush();
+                    break;
+                    case 7: bw.write("\n7. First_Occurence\n");
+                            bw.flush();
+                            int nume = Integer.parseInt(br.readLine());
+                            for(int i = 0; i < nume; i++)
+                                bw.write( (run.print_first_occurence( br.readLine())));
+                                bw.flush();
+                    break;
+                    case 8: bw.write("\n Thanks 4 Coming \n");
+                            bw.flush();
+                    break;
+                    default: bw.write("Incorrect\n");
+                             bw.flush();
+
+                    break;
+                }
+            }while(op!=8);
+        }catch(Exception ex) {}
+    }
+    
+}

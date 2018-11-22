@@ -42,7 +42,6 @@ public class Motorshop implements BinaryTreeNode {
             this.Type_Spare= Spare;
             this.In_Date = InD;
             this.Out_Date = OutD;
-            
 	}
 	
 	
@@ -97,7 +96,7 @@ public class Motorshop implements BinaryTreeNode {
 	
 	public boolean isLessThan(BinaryTreeNode node)
 	{
-            return false;
+           return false;
         }
 	public String toString()
 	{

@@ -57,7 +57,7 @@ public class Main {
             //Options Menu
             bw.write("\nMenu\n"
                     + "1. Insert New Motorcycle for Fixing \n2. Delete Motorcycle By Owner's Id Document \n"
-                    + "3. Search Motorcycle By Owner's Id Document \n"
+                    + "3. Search Motorcycle By License_Number \n"
                     + "4. Out \n");
             bw.flush();
             op = Integer.parseInt(br.readLine());
@@ -90,11 +90,11 @@ public class Main {
                         Motorshop.delete((BinaryTreeNode) new Motorshop(null,Owner,null,null,null,null,null));
                         Motorshop.inorder(Motorshop.root);
                 break;
-                //Option 4(Search)
-                case 3: bw.write("Owner's Id Document:");
+                //Option 4(Delete)
+                case 3: bw.write("License_Number:");
                         bw.flush();
-                        Owner=br.readLine();
-                        Motorshop.search((BinaryTreeNode) new Motorshop(null,Owner,null,null,null,null,null));
+                        License=br.readLine();
+                        Motorshop.search((BinaryTreeNode) new Motorshop(null,null,null,License,null,null,null));
                 break;
                     //Option 9(Get Out)
                 case 4:  bw.write("Thanks For Visit Us\n");

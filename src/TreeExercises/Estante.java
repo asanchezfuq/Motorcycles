@@ -9,7 +9,7 @@ import Trees.BinaryTreeNode;
 
 /**
  *
- * @author TATIANA
+ * @author Andrés Felipe
  */
 public class Estante implements BinaryTreeNode {
 
@@ -22,11 +22,6 @@ public class Estante implements BinaryTreeNode {
 		this.value = value;
 	}
 
-    Estante(String value) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-	
-	
 	@Override
 	public void setLeft(BinaryTreeNode node) 
 	{
