@@ -199,7 +199,7 @@ public class BinaryTree {
 	{
 		if(node != null)
 		{
-			System.out.print(node.toString() + " ");
+			System.out.print(node.toString() + "");
 			preorder(node.getLeft());
 			preorder(node.getRight());
 		}

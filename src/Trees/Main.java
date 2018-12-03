@@ -57,8 +57,7 @@ public class Main {
             //Options Menu
             bw.write("\nMenu\n"
                     + "1. Insert New Motorcycle for Fixing \n2. Delete Motorcycle By Owner's Id Document \n"
-                    + "3. Search Motorcycle By License_Number \n"
-                    + "4. Out \n");
+                    + "3. Search Motorcycle By License_Number \n4. Print PostOrder \n");
             bw.flush();
             op = Integer.parseInt(br.readLine());
             switch(op)
@@ -90,14 +89,19 @@ public class Main {
                         Motorshop.delete((BinaryTreeNode) new Motorshop(null,Owner,null,null,null,null,null));
                         Motorshop.inorder(Motorshop.root);
                 break;
-                //Option 4(Delete)
+                //Option 3(Delete)
                 case 3: bw.write("License_Number:");
                         bw.flush();
                         License=br.readLine();
                         Motorshop.search((BinaryTreeNode) new Motorshop(null,null,null,License,null,null,null));
                 break;
+                //Option 4 (PostOrder)
+                case 4: bw.write("PostOrder:\n");
+                        bw.flush();
+                        Motorshop.postorder(Motorshop.root);
+                break;
                     //Option 9(Get Out)
-                case 4:  bw.write("Thanks For Visit Us\n");
+                case 5:  bw.write("Thanks For Visit Us\n");
                          bw.flush();
                 break;
                 default: bw.write("Incorrect");
@@ -105,7 +109,7 @@ public class Main {
                 break;
                 
             }
-        }while(op!=4);
+        }while(op!=5);
     }
     
 }
