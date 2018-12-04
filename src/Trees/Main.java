@@ -57,7 +57,7 @@ public class Main {
             //Options Menu
             bw.write("\nMenu\n"
                     + "1. Insert New Motorcycle for Fixing \n2. Delete Motorcycle By Owner's Id Document \n"
-                    + "3. Search Motorcycle By License_Number \n4. Print PostOrder \n");
+                    + "3. Search Motorcycle By License_Number \n4. Print PostOrder \n5. Out \n");
             bw.flush();
             op = Integer.parseInt(br.readLine());
             switch(op)
