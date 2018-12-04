@@ -13,7 +13,7 @@ import java.io.OutputStreamWriter;
 
 /**
  *
- * @author LENOVO1
+ * @author Andrés Felipe
  */
 public class Djikstra {
  

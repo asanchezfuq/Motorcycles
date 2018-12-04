@@ -9,7 +9,7 @@ import LinearDataStructures.Node;
 
 /**
  *
- * @author LENOVO1
+ * @author Andrés Felipe
  */
 public class Lista_amigos implements Node {
 //estructura de datos

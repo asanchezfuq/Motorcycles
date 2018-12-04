@@ -11,7 +11,7 @@ import java.io.OutputStreamWriter;
 
 /**
  *
- * @author BOG-A409-E-006
+ * @author Andrés Felipe
  */
 public class AdjacenceMatrix{
 
